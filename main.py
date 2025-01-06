@@ -1,5 +1,5 @@
-def get_text():
-    with open("books/frankenstein.txt") as f:
+def get_text(file):
+    with open(file) as f:
         file_contents = f.read()
         return file_contents
 
@@ -19,10 +19,12 @@ def print_letter_counts(text):
 
     for char in sorted(chars, key=chars.get, reverse=True):
         if char.isalpha():
-            print(f"Number of '{char}' in file: {chars[char]}")
+            print(f"The '{char}' character was found {chars[char]} times")
 
 
 if __name__ == "__main__":
-    text = get_text()
+    file = "books/frankenstein.txt"
+    print (f"--- Begin report of {file} ---")
+    text = get_text(file)
     print_word_count(text)
     print_letter_counts(text)
