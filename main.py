@@ -18,7 +18,8 @@ def print_letter_counts(text):
                 chars[char] = 1
 
     for char in sorted(chars, key=chars.get, reverse=True):
-        print(f"Number of '{char}' in file: {chars[char]}")
+        if char.isalpha():
+            print(f"Number of '{char}' in file: {chars[char]}")
 
 
 if __name__ == "__main__":
